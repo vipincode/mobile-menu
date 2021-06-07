@@ -1,0 +1,170 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background: #ebebeb;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	line-height: 1.6;
+	font-weight: normal;
+}
+
+.content {
+	width: 98%;
+	max-width: 1140px;
+	margin: 85px auto 30px;
+	background: #fff;
+	padding: 15px;
+}
+
+h1 {
+	margin: 0;
+	font-size: 32px;
+	text-align: center;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	display: block;
+	padding: 6px 12px;
+	text-decoration: none;
+	color: #555;
+}
+
+header {
+	background-color: #222;
+	padding: 8px 0px;
+	position: relative;
+	z-index: 99;
+}
+
+nav {
+	width: 96%;
+	margin: 0 auto
+}
+
+nav a {
+	color: #fff;
+}
+
+/*------------HAMBURGER------------------------*/
+.hamburger {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9;
+}
+
+.hamburger-inner, 
+.hamburger-inner::before, 
+.hamburger-inner::after {
+	background-color: #fff;
+}
+.hamburger.is-active 
+.hamburger-inner, 
+.hamburger.is-active .hamburger-inner::before, 
+.hamburger.is-active .hamburger-inner::after {
+    background-color: #fff;
+}
+
+.mainNav {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	left: 0;
+}
+
+/*-----------------MEDIA QUERY--------------*/
+
+@media (max-width: 1023px) {
+	.main-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: calc(100vh + 50px);
+		background: rgba(0,0,0,0.65);
+		z-index: 5;
+		display: none;
+	}
+	.menu {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: #0b0b0b;
+		width: 100%;
+		max-width: 300px;
+		height: calc(100vh + 50px);
+		z-index: 55;
+		transform: translate3d(-100%, 0, 0);
+		transition: transform 0.3s ease-in;
+	}
+
+	body.menu-is-active .menu {
+		transform: translate3d(0,0,0);
+		display: block;
+	}
+
+	body.menu-is-active .main-overlay {
+		display: block;
+	}
+
+}
+
+@media(min-width: 1024px) {
+	nav {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	nav ul li {
+		display: inline-block;
+		padding: 6px 12px;
+	}
+
+	.hamburger {
+		display: none;
+	}
+
+	.content {
+		width: 75%; 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
